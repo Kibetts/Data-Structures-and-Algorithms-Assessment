@@ -1,7 +1,8 @@
 def is_balanced(expression):
     stack = []
-    opening = set('([{') 
-    closing = set(')]}')
+    opening = ['(','[','{']
+    closing = [')',']','}'] 
+
     
     for char in expression:
         if char in opening:
@@ -12,3 +13,9 @@ def is_balanced(expression):
             if closing.index(char) != opening.index(stack.pop()):
                 return False
     return not stack
+
+expression1 = "([]{})"
+expression2 = "([)]"
+
+print(is_balanced(expression1)) # True
+print(is_balanced(expression2)) # False
