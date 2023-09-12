@@ -10,4 +10,12 @@ def word_frequency(sentence):
             if current_word:
                 words.append(current_word)
                 current_word = ""
+
+    for word in words:
+        if word not in frequencies:
+            frequencies[word] = 1
+        else:
+            frequencies[word] += 1
+            
+    return frequencies
             
